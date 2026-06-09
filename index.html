@@ -1,1 +1,1282 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>손지은 포트폴리오</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg: #f6f7fb;
+      --ink: #1e2330;
+      --muted: #667085;
+      --line: #d9deea;
+      --card: #ffffff;
+      --accent: #4f46e5;
+      --accent-deep: #3730a3;
+      --accent-soft: #eef2ff;
+      --accent-light: #f4f3ff;
+      --shadow: rgba(30, 35, 48, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Aptos, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(1080px, 92%);
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    header {
+      padding: 76px 0 58px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, #e0e7ff 0%, transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
+    }
+
+    .eyebrow {
+      color: var(--accent-deep);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -0.045em;
+    }
+
+    h2 {
+      font-size: 1.85rem;
+      margin: 0 0 22px;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+      margin: 0 0 10px;
+    }
+
+    p { margin: 0 0 16px; }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .lead {
+      font-size: 1.18rem;
+      color: var(--muted);
+      max-width: 860px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .meta span {
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .book-card {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-card .actions {
+      margin-top: auto;
+    }
+
+    .book-grid {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .book-grid .book-card {
+      width: 100%;
+      min-height: 310px;
+    }
+
+    .featured-card {
+      padding: 32px;
+      border: 1.5px solid var(--accent);
+      background: linear-gradient(180deg, #ffffff 0%, #f4f3ff 100%);
+    }
+
+    .theoretical-card {
+      padding: 32px;
+    }
+
+    .orientation-item-title {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--ink);
+      font-size: 1.13rem;
+      line-height: 1.5;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .award-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .award-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(79, 70, 229, 0.13), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f4f3ff 100%);
+      z-index: 0;
+    }
+
+    .award-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .award-title {
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .essay-title {
+      font-size: 1.08rem;
+      margin: 4px 0 6px;
+      color: var(--accent-deep);
+      font-weight: 800;
+    }
+
+    .subtitle {
+      display: block;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .featured-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      color: var(--accent-deep);
+      background: var(--accent-soft);
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    .project-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .project-title small {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .quote {
+      margin-top: 22px;
+      padding: 20px 22px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 14px 14px 0;
+      background: var(--accent-soft);
+      color: var(--ink);
+      font-family: "Nanum Myeongjo", "Apple SD Gothic Neo", "Noto Serif KR", serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.85;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-top: 16px;
+    }
+
+    main.container {
+      padding-bottom: 22px;
+    }
+
+    section:last-of-type {
+      padding-bottom: 34px;
+      border-bottom: none;
+    }
+
+    footer {
+      padding: 18px 0 34px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+
+    .research-interests-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 26px;
+    }
+
+    .research-interests-card h3 {
+      margin-bottom: 14px;
+    }
+
+    .research-interests-card ul {
+      margin-top: 0;
+    }
+
+    .research-interests-card li:last-child {
+      margin-bottom: 0;
+    }
+
+    .digital-portrait-card {
+      overflow: visible;
+      padding: 28px;
+    }
+
+    .digital-portrait-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      max-width: 100%;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.2;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    .digital-portrait-content {
+      display: grid;
+      grid-template-columns: 184px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .digital-portrait-image {
+      width: 184px;
+      height: 184px;
+      max-width: 100%;
+      background: var(--accent-soft);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(30, 35, 48, 0.08);
+    }
+
+    .digital-portrait-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .digital-portrait-text {
+      min-height: 184px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .digital-portrait-title {
+      font-size: 1.35rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+    }
+
+    .digital-portrait-text p {
+      max-width: 390px;
+      margin: 0;
+      line-height: 1.65;
+    }
+
+
+    .character-ip-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .character-ip-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .character-ip-visual {
+      flex-shrink: 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #f4f3ff, #eef2ff);
+      border: 1px solid rgba(79, 70, 229, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .character-ip-visual img {
+      width: 108px;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 800px) {
+      .span-4,
+      .span-6,
+      .span-8,
+      .span-12 {
+        grid-column: span 12;
+      }
+
+      header { padding-top: 48px; }
+
+      .project-title {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+
+      .book-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .character-ip-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .character-ip-visual {
+        width: 120px;
+        height: 120px;
+      }
+
+      .character-ip-visual img {
+        width: 92px;
+      }
+
+
+      .digital-portrait-card {
+        padding: 22px;
+      }
+
+      .digital-portrait-label {
+        margin-bottom: 18px;
+        white-space: normal;
+      }
+
+      .digital-portrait-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .digital-portrait-image {
+        width: min(100%, 260px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+        border-radius: 18px;
+      }
+
+      .digital-portrait-text {
+        min-height: auto;
+        padding: 0;
+        gap: 12px;
+      }
+
+      .digital-portrait-text p {
+        margin: 0;
+      }
+
+    }
+  
+    /* Books & Writing Projects: auxiliary WikiDocs books in a balanced 2x2 grid. */
+    #books .book-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    #books .book-grid > .book-card {
+      grid-column: auto;
+      width: 100%;
+      min-height: 310px;
+    }
+
+    @media (max-width: 800px) {
+      #books .book-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<header>
+<div class="container">
+<div class="eyebrow">
+        Cultural Informatics · Sociology · Computational Social Science · Mixed Methods · AI
+      </div>
+<h1>Son Ji-Eun</h1>
+<p class="lead">
+        Interdisciplinary researcher interested in how AI systems, digital platforms,
+        and mixed methods reshape cultural experience, emotion, communication,
+        and everyday human interaction.
+      </p>
+<div class="meta">
+<span>M.A. in Social &amp; Cultural Studies</span>
+<span>B.A. in Management</span>
+<span>Science-track background through secondary education</span>
+<span>Python · Swift · SQL · Stata · SPSS · Machine Learning · Deep Learning · NLP</span>
+</div>
+</div>
+</header>
+<main class="container">
+<section id="research-direction">
+<h2>Theoretical Orientation</h2>
+<div class="grid">
+<article class="card featured-card theoretical-card span-12">
+<p>
+<strong class="orientation-item-title">1. 학문적 지향점: 사회 구조와 네트워크의 수학적·사회학적 탐구</strong>
+            저의 학문적 문제의식은 언제나 ‘사회학’이라는 본질을 향해 있습니다. 석사 과정 시절부터 사회 연결망, 사회 구조, 그리고 지식과 정보의 확산 과정에 지속적인 관심을 두고 관련 이론과 방법론을 깊이 있게 탐구해 왔습니다. 특히 연세대학교 대학원 재학 시절 김용학 전 총장님의 《사회 연결망 이론》을 접한 이후, 사회적 관계와 구조를 수학적으로 모델링하고 이해하는 작업에 깊이 매료되었습니다. 최근에는 연결망의 형태와 중심성에 관한 개념적 모델을 구상하기도 했습니다. 예컨대 ‘다각형이 정다각형이 되는 과정, 정다각형의 변의 수가 증가할수록 원에 수렴하며 무게중심이 일치해지는 현상’을 통해, 가장 이상적인 연결망 구조와 자아의 형태를 수학적 극한(Limit) 개념과 연결 지어 분석하는 아이디어를 생각했습니다.
+          </p>
+<p>
+<strong class="orientation-item-title">2. 연구 방법론적 역량: 이론과 기술을 아우르는 데이터 분석력</strong>
+            연구의 깊이는 탄탄한 방법론에서 비롯된다고 믿습니다. 석사 과정 당시 다양한 연구방법론 문헌을 탐독하였으며, 통계 패널 데이터 분석을 위해 SPSS와 Stata를 익혀 실제 연구에 적용했습니다. 이에 머무르지 않고 현대적인 데이터 처리 역량을 갖추기 위해 Python, SQL, Swift 등의 프로그래밍 언어를 심화 학습하였습니다. 기술적 분석 도구를 자유롭게 다루는 역량을 강화함으로써, 사회학적 문제의식을 보다 정밀한 데이터 기반 연구로 확장할 수 있는 기반을 다졌습니다.
+          </p>
+<p>
+<strong class="orientation-item-title">3. 지속적이고 일관된 박사과정 준비</strong>
+            박사과정 진학은 일시적인 선택이 아니라, 오랜 시간 정교하게 다듬어온 저의 생애 계획입니다. 석사과정 예비심사 당시부터 박사 진학을 염두에 두고 연구에 몰입하기 위해 계약직 근무 일정과 퇴사 시점을 조율했을 만큼 연구자로서의 삶을 확고하게 준비해 왔습니다. 비록 환경적 요인으로 시기가 다소 조정되기도 했으나, 사회학 이론과 방법론에 대한 학습을 멈추지 않으며 연구를 향한 열정을 일관되게 유지해 왔습니다.
+          </p>
+<p>
+<strong class="orientation-item-title">4. 학문적 경로의 변동과 성장: 인간과 지식 구조의 본질을 향해</strong>
+            저의 학문적 여정에는 의미 있는 이정표들이 있었습니다. 첫 대학원 입학 당시에는 노인복지 실무 경력을 바탕으로 진학했으나, 통계 방법론을 깊이 있게 연구하고자 ‘사회문화전공’으로 전공을 변경하여 사회학 석사 학위를 취득했습니다. 학문적 갈증에 충실했던 이 결정에 대해서는 지금도 깊은 자부심을 가지고 있습니다. 2026학년도 후기에는 고려대학교 인공지능학과 박사과정에 지원하여 면접 대상자로 선정되기도 했습니다. 당시 희망 지도교수였던 Christian Wallraven 교수님과의 논의 과정에서 교수님의 연구실과 핏이 맞고, 저의 융합적 관심사가 뇌공학 및 인지과학적 접근과도 맞닿아 있음을 확인했으나, 행정적인 전공 변경 제한으로 인해 최종 면접에는 응시하지 않았습니다. 그러나 이 경험은 오히려 저에게 중요한 터닝포인트가 되었습니다. 기술 그 자체보다 ‘기술을 매개로 한 인간과 사회, 그리고 지식의 구조적 확산’을 탐구하는 데 더 큰 열정이 있음을 깨달았고, 이를 통해 ‘인문정보학’과 ‘첨단 사회학’의 접점에서 제 연구의 종착지를 더욱 분명히 확정할 수 있었습니다.
+          </p>
+<div class="quote">
+            사회가 끊임없는 변동을 통해 발전하듯, 저의 학문적 경로 역시 연구 방향을 더욱 선명하게 다듬어가는 긍정적 진화의 과정이었습니다. 데이터 분석 기술(Python, SQL, Stata)이라는 강력한 무기를 바탕으로, 사회 구조와 관계의 역학을 수학적·사회학적으로 규명하는 연구자가 되겠습니다.
+          </div>
+</article>
+<aside class="card research-interests-card span-4">
+<h3>Research Interests</h3>
+<ul>
+<li>Digital Humanities</li>
+<li>Computational Social Science</li>
+<li>Mixed Methods</li>
+<li>AI and Human Interaction</li>
+<li>Platform Studies</li>
+<li>Review Data-based Cultural Analysis</li>
+</ul>
+</aside>
+<article class="card digital-portrait-card span-8">
+<span class="digital-portrait-label">Digital Culture Portrait</span>
+<div class="digital-portrait-content">
+<div class="digital-portrait-image">
+<img alt="Ji-Eun Son holding a smartphone frame, representing digital humanities and mediated vision" src="https://i.ibb.co/rGVTn22S/portrait-squre.jpg"/>
+</div>
+<div class="digital-portrait-text">
+<h3 class="digital-portrait-title">Seeing culture through digital frames</h3>
+<p>
+                This portrait reflects my interest in mediated vision: how people see,
+                interpret, and represent themselves through screens, platforms, images,
+                interfaces, and everyday digital tools.
+              </p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section id="selected-projects">
+<h2>Computational Methods Projects</h2>
+<div class="grid">
+<article class="card span-12">
+<div class="project-title">
+<h3>CGV Movie Review Analysis</h3>
+<small>NLP · Sentiment Analysis · Topic Modeling</small>
+</div>
+<p class="tagline">
+            A movie review analytics project exploring audience responses, sentiment patterns,
+            and topic structures in Korean cinema review data.
+          </p>
+<ul>
+<li>Analyzed large-scale CGV movie review data to understand audience perception and content-related responses.</li>
+<li>Applied text preprocessing, sentiment analysis, and topic modeling to extract interpretable patterns from user-generated reviews.</li>
+<li>Connected computational text analysis with cultural consumption, audience experience, and platform-based review behavior.</li>
+</ul>
+<div class="tags">
+<span class="tag">Movie Reviews</span>
+<span class="tag">Cultural Analytics</span>
+<span class="tag">NLP</span>
+<span class="tag">Audience Experience</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://github.com/j-ai-616/cgv-review-pilot-analysis" target="_blank">GitHub</a>
+</div>
+</article>
+<article class="card span-12">
+<div class="project-title">
+<h3>Smart Home App Review Analytics</h3>
+<small>NLP · BERTopic · UX Analytics</small>
+</div>
+<p class="tagline">
+            A computational analysis project examining how users experience smart home ecosystems
+            through app reviews, update contexts, and platform-specific feedback.
+          </p>
+<ul>
+<li>Collected large-scale user reviews from smart home apps such as LG ThinQ and Samsung SmartThings.</li>
+<li>Designed a pipeline for preprocessing, embedding, topic modeling, sentiment analysis, and temporal interpretation.</li>
+<li>Used BERTopic to identify recurring UX concerns, ecosystem integration issues, emotional responses, and service pain points.</li>
+<li>Explored how app updates may reshape user experience and perceived platform reliability over time.</li>
+<li>Positioned app review data as a cultural and behavioral trace of human-technology interaction.</li>
+</ul>
+<div class="tags">
+<span class="tag">Cultural Data Analytics</span>
+<span class="tag">User Experience</span>
+<span class="tag">Smart Home</span>
+<span class="tag">Topic Modeling</span>
+<span class="tag">Platform Studies</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://github.com/j-ai-616/smart_home" target="_blank">GitHub</a>
+</div>
+</article>
+<article class="card span-12">
+<div class="project-title">
+<h3>AI-Based SaaS Churn Prediction &amp; Retention Strategy</h3>
+<small>Machine Learning · XAI · Streamlit</small>
+</div>
+<p class="tagline">
+            An explainable AI project for predicting customer churn and translating model outputs
+            into actionable retention strategies.
+          </p>
+<ul>
+<li>Built an account-level churn prediction pipeline using subscription, feature usage, support ticket, and account data.</li>
+<li>Excluded churn event records from model features to prevent data leakage and used them for post-hoc interpretation.</li>
+<li>Engineered behavioral and operational features such as active subscription ratio, error rate, support response time, days since last usage, and recent upgrade/downgrade flags.</li>
+<li>Compared machine learning and deep learning models, tuned the operational threshold, and used SHAP for global and local explanation.</li>
+<li>Developed a Streamlit dashboard to communicate churn risk, model reasoning, and retention actions.</li>
+</ul>
+<div class="tags">
+<span class="tag">Explainable AI</span>
+<span class="tag">Customer Behavior</span>
+<span class="tag">Predictive Modeling</span>
+<span class="tag">Human Decision Support</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://github.com/j-ai-616/RavenStack_Churn_Project" target="_blank">GitHub</a>
+</div>
+</article>
+<article class="card span-12">
+<div class="project-title">
+<h3>E-commerce Behavioral Analytics &amp; A/B Test Simulation</h3>
+<small>Funnel Analysis · Experiment Design · Statistics</small>
+</div>
+<p class="tagline">
+            A behavioral analytics project identifying conversion bottlenecks and designing an
+            experiment-based strategy for improving purchase conversion.
+          </p>
+<ul>
+<li>Analyzed large-scale e-commerce behavioral log data to understand user journeys from view to cart to purchase.</li>
+<li>Identified funnel drop-offs and product/category-level patterns in user behavior.</li>
+<li>Designed an A/B test simulation framework to evaluate potential conversion improvement strategies.</li>
+<li>Translated behavioral data into business recommendations for product and growth decision-making.</li>
+</ul>
+<div class="tags">
+<span class="tag">Digital Platform Behavior</span>
+<span class="tag">A/B Testing</span>
+<span class="tag">Behavioral Analytics</span>
+<span class="tag">Decision Science</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://github.com/j-ai-616/ecommerce_ab_test_project" target="_blank">GitHub</a>
+</div>
+</article>
+<article class="card span-12">
+<div class="project-title">
+<h3>Employee Attrition EDA: Understanding a Company Pain Point</h3>
+<small>EDA · HR Analytics · Business Problem Framing</small>
+</div>
+<p class="tagline">
+            An exploratory data analysis project examining employee attrition as a company pain point
+            and translating descriptive patterns into business questions.
+          </p>
+<ul>
+<li>Explored employee attrition data to identify potential patterns related to turnover risk.</li>
+<li>Focused on EDA as a problem-framing process before predictive modeling.</li>
+<li>Connected workforce data patterns with organizational decision-making and retention strategy.</li>
+</ul>
+<div class="tags">
+<span class="tag">EDA</span>
+<span class="tag">HR Analytics</span>
+<span class="tag">Company Pain Point</span>
+<span class="tag">Organizational Data</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://github.com/j-ai-616/eda_report" target="_blank">GitHub</a>
+</div>
+</article>
+<article class="card span-12">
+<div class="project-title">
+<h3>Master’s Thesis: Life Satisfaction among Middle-Aged and Older Retirees</h3>
+<small>Quantitative Sociology · Panel Data · Stata</small>
+</div>
+<p class="tagline">
+            A social and cultural thesis using Korean panel data to examine factors associated with life
+            satisfaction among retirees.
+          </p>
+<ul>
+<li>Used KLoSA panel data to analyze the life satisfaction of middle-aged and older retirees.</li>
+<li>Examined both objective and subjective predictors, including socioeconomic status, perceived social class, and self-rated health.</li>
+<li>Found that subjective indicators explained life satisfaction more strongly than many objective measures.</li>
+<li>Developed a long-term research interest in how subjective experience can be operationalized and analyzed through data.</li>
+</ul>
+<div class="tags">
+<span class="tag">Sociology</span>
+<span class="tag">Panel Data</span>
+<span class="tag">Subjective Well-being</span>
+<span class="tag">Quantitative Research</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://www.riss.kr/link?id=T15732289" target="_blank">RISS Thesis</a>
+</div>
+</article>
+</div>
+</section>
+<section id="books">
+<h2>Books &amp; Writing Projects</h2>
+<div class="grid">
+<article class="card featured-card span-12">
+<span class="featured-label">Main WikiDocs Project</span>
+<div class="project-title">
+<h3>Did Platforms Sense the Nobel Prize Before Institutions Did?</h3>
+<small>Goodreads · Nobel Prize · Digital Culture</small>
+</div>
+<p class="tagline">
+            A computational culture and platform analysis project exploring whether
+            platform-based reader responses anticipated institutional literary recognition
+            before the 2024 Nobel Prize in Literature announcement.
+          </p>
+<ul>
+<li>Analyzed Goodreads review data related to Han Kang’s <em>The Vegetarian</em>.</li>
+<li>Combined multilingual review translation, sentiment analysis, BERTopic, and temporal analysis to examine global reader responses.</li>
+<li>Explored how platform-generated cultural signals may precede institutional recognition in world literature.</li>
+<li>Positioned digital traces not merely as behavioral data, but as cultural evidence embedded in platform ecosystems.</li>
+<li>Connected computational methods with literary interpretation, platform studies, and cultural data analysis.</li>
+</ul>
+<div class="tags">
+<span class="tag">Goodreads</span>
+<span class="tag">Platform Culture</span>
+<span class="tag">World Literature</span>
+<span class="tag">Han Kang</span>
+<span class="tag">The Vegetarian</span>
+<span class="tag">Sentiment Analysis</span>
+<span class="tag">BERTopic</span>
+<span class="tag">Mixed Methods</span>
+<span class="tag">Computational Interpretation</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://wikidocs.net/book/19752" target="_blank">WikiDocs</a>
+</div>
+</article>
+<article class="card featured-card span-12">
+<span class="featured-label">Essay</span>
+<div class="project-title">
+<h3>The Age of Asking Alone</h3>
+<small>Essay · Generative AI · Human-Technology Relationship</small>
+</div>
+<p class="tagline">
+            A reflective essay project by Son Ji-Eun, exploring how generative AI changes the way humans ask questions, learn, create, and seek response in the digital age.
+          </p>
+<p>
+<strong>The Age of Asking Alone</strong>, subtitled
+            <em>From Humans Who Longed for Response to Humans with the Right to Ask</em>,
+            traces a personal and cultural journey from the early internet and P2P culture
+            to generative AI, human-machine interaction, creative democratization,
+            and the emotional fatigue of contemporary relationships.
+          </p>
+<p>
+            Written as a Korean-language essay, this project connects personal memory,
+            digital culture, and human-centered reflection. It treats AI not merely as a tool,
+            but as part of a broader historical shift in which individuals gain new ways to ask,
+            think, create, and receive response even when they are alone.
+          </p>
+<div class="tags">
+<span class="tag">Son Ji-Eun Essay</span>
+<span class="tag">Generative AI</span>
+<span class="tag">Digital Culture</span>
+<span class="tag">Human-AI Interaction</span>
+<span class="tag">Personal Essay</span>
+<span class="tag">Cultural Reflection</span>
+<span class="tag">Korean Writing</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://wikidocs.net/book/19883" target="_blank">WikiDocs</a>
+</div>
+</article>
+
+
+
+<div aria-label="Core concept and technical WikiDocs books" class="book-grid span-12">
+<article class="card book-card">
+<h3>150 Core Concepts in LLMs, SLMs, and NLP</h3>
+<p class="tagline">
+              A Korean-language conceptual guide to 150 core terms related to large language models,
+              small language models, natural language processing, generative AI, language, memory,
+              and AI-mediated textual environments.
+            </p>
+<div class="tags">
+<span class="tag">LLM</span>
+<span class="tag">SLM</span>
+<span class="tag">NLP</span>
+<span class="tag">Generative AI</span>
+<span class="tag">AI Literacy</span>
+<span class="tag">AI-Mediated Texts</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://wikidocs.net/book/20089" target="_blank">WikiDocs</a>
+</div>
+</article>
+<article class="card book-card">
+<h3>60 Core Concepts in Machine Learning &amp; Deep Learning</h3>
+<p class="tagline">
+              A beginner-oriented conceptual guide to machine learning and deep learning,
+              designed to explain technical ideas in accessible language.
+            </p>
+<div class="tags">
+<span class="tag">Machine Learning</span>
+<span class="tag">Deep Learning</span>
+<span class="tag">AI Education</span>
+<span class="tag">Technical Communication</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://wikidocs.net/book/19555" target="_blank">WikiDocs</a>
+</div>
+</article>
+<article class="card book-card">
+<h3>Technical Documentation on SaaS Churn Prediction</h3>
+<p class="tagline">
+              A project-based technical book documenting the full pipeline from EDA,
+              preprocessing, ML/DL modeling, XAI interpretation, and Streamlit deployment.
+            </p>
+<div class="tags">
+<span class="tag">XAI</span>
+<span class="tag">Churn Prediction</span>
+<span class="tag">Technical Writing</span>
+<span class="tag">Applied AI</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://wikidocs.net/book/19571" target="_blank">WikiDocs</a>
+</div>
+</article>
+<article class="card book-card">
+<h3>Statistics with Social Science Data</h3>
+<p class="tagline">
+              A Korean-language educational book introducing statistical thinking,
+              social science data analysis, and applied quantitative research workflows.
+            </p>
+<div class="tags">
+<span class="tag">Statistics</span>
+<span class="tag">Social Science</span>
+<span class="tag">Stata</span>
+<span class="tag">Research Education</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://wikidocs.net/book/19517" target="_blank">WikiDocs</a>
+</div>
+</article>
+</div></div>
+</section>
+<section id="awards">
+<h2>Awards &amp; Recognition</h2>
+<div class="grid">
+<article class="card featured-card award-card span-12">
+<span class="featured-label">Writing Award</span>
+<div class="project-title">
+<h3 class="award-title">Encouragement Award, Lifeary 1st Writing Contest <em>Stagnation</em> (停滯)</h3>
+<small>Essay · Literary Writing · 2026</small>
+</div>
+<p class="essay-title">
+            “A Time to Take Root”
+            <span class="subtitle">
+              Stagnation was not a pause, but a time when direction turned inward.
+            </span>
+</p>
+<p>
+            Received the Encouragement Award at the Lifeary 1st Writing Contest
+            <em>Stagnation</em> (停滯) for the essay <strong>“A Time to Take Root.”</strong>
+            The work reflects on stagnation not as a simple state of stillness,
+            but as a quiet inward turn — a season of taking root, enduring time,
+            and preparing for a future direction.
+          </p>
+<div class="quote">
+            Stagnation was not a pause, but a time when direction turned inward.
+          </div>
+<div class="tags">
+<span class="tag">Writing Award</span>
+<span class="tag">Essay</span>
+<span class="tag">Lifeary</span>
+<span class="tag">Stagnation</span>
+<span class="tag">停滯</span>
+<span class="tag">A Time to Take Root</span>
+</div>
+</article>
+</div>
+</section>
+<section id="professional-experience">
+<h2>Professional &amp; Cross-Cultural Experience</h2>
+<div class="grid">
+<article class="card span-6">
+<h3>Project Manager — Language and culture NGO, 2019</h3>
+<p class="tagline">
+            project management experience.
+          </p>
+<ul>
+<li>Prepared an SPSS-based statistical report for the establishment of a Korean language institute in Surabaya, Indonesia.</li>
+<li>Supported the operation of a public marathon event in collaboration with YTN.</li>
+<li>Coordinated and managed the university student Probono program.</li>
+</ul>
+<div class="tags">
+<span class="tag">Language &amp; Culture</span>
+<span class="tag">SPSS</span>
+<span class="tag">Indonesia</span>
+<span class="tag">NGO Project</span>
+</div>
+</article>
+<article class="card span-6">
+<h3>IT Consulting &amp; Project Management</h3>
+<p class="tagline">
+            Professional experience in IT consulting, SI project coordination, and organizational operations.
+          </p>
+<ul>
+<li>SI Project Management Office — 2022–2024.</li>
+<li>IT Consulting: ISP/ISMP/BPR/PI/BIG DATA — 2022.</li>
+<li>Business Planning / PR / Administration — 2019–2020.</li>
+<li>Social Welfare Program Coordinator — 2018.</li>
+<li>CEO Academy, Intern — 2012</li>
+</ul>
+<div class="tags">
+<span class="tag">PMO</span>
+<span class="tag">IT Consulting</span>
+<span class="tag">Administration</span>
+<span class="tag">Social Welfare</span>
+</div>
+</article>
+</div>
+</section>
+<section id="independent-studio">
+<h2>Independent Creative Studio</h2>
+<div class="grid">
+<div class="card span-12">
+<h3>Founder, Risonanza Studio</h3>
+<p>
+            Risonanza Studio is an independent creative and technology studio founded by Ji-Eun Son,
+            exploring character-based communication, educational content, software development,
+            and culturally grounded digital products.
+          </p>
+<p>
+            The studio reflects my broader interest in how digital platforms,
+            learning experiences, software products, and human expression intersect
+            in contemporary media environments.
+          </p>
+<div class="tags">
+<span class="tag">Creative Studio</span>
+<span class="tag">Educational Content</span>
+<span class="tag">Character IP</span>
+<span class="tag">Digital Products</span>
+<span class="tag">Software Development</span>
+</div>
+</div>
+<article class="card featured-card span-12">
+<span class="featured-label">Released App</span>
+<div class="project-title">
+<h3>Jelly Zero Math | Math Puzzle &amp; Brain Stimulation Game</h3>
+<small>iOS · SwiftUI · Math Game · Released App</small>
+</div>
+<p class="tagline">
+            A released iPhone math puzzle app by Risonanza Studio, inspired by a childhood habit of combining car plate numbers to make zero.
+          </p>
+<p>
+<strong>Jelly Zero Math</strong> began from a small childhood memory:
+            looking at car plate numbers and mentally combining them to make 0.
+            This personal habit later became the foundation for a playful iPhone math game
+            released by Risonanza Studio.
+          </p>
+<p>
+            The app transforms arithmetic expression-making into a casual brain-stimulation game experience.
+            By combining number play, jelly-like visual characters, and result-based feedback,
+            it makes mathematical thinking feel playful, intuitive, and emotionally approachable.
+          </p>
+<p>
+            This project reflects my interest in turning everyday cognitive habits into released digital products:
+            from personal number play, to interaction design, to SwiftUI implementation, App Store submission,
+            and public product communication.
+          </p>
+<ul>
+<li>Designed the game concept from a personal childhood number-play habit.</li>
+<li>Implemented a released iPhone math puzzle experience using SwiftUI.</li>
+<li>Created a casual brain-stimulation app that encourages flexible arithmetic thinking.</li>
+<li>Connected mathematical reasoning with playful visual feedback and character-based interaction.</li>
+<li>Completed the product cycle from concept design and app development to App Store review approval.</li>
+<li>Built a public support page for user communication and product documentation.</li>
+</ul>
+<div class="tags">
+<span class="tag">iOS App</span>
+<span class="tag">SwiftUI</span>
+<span class="tag">Math Game</span>
+<span class="tag">Brain Stimulation</span>
+<span class="tag">Puzzle Design</span>
+<span class="tag">App Store Review Approved</span>
+<span class="tag">Support Page</span>
+<span class="tag">Character-based Interaction</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://apps.apple.com/app/jelly-zero-math/id6771479015" target="_blank">
+              App Store
+            </a>
+</div>
+</article>
+<article class="card featured-card span-12">
+<span class="featured-label">Released App</span>
+<div class="project-title">
+<h3>Gyeol Abacus | Portable 8-Column Abacus App</h3>
+<small>iOS · SwiftUI · Education / Utility · Released App</small>
+</div>
+<p class="tagline">
+            A portable abacus app by Risonanza Studio, inspired by my mother’s request to bring the increasingly hard-to-find physical abacus into a simple iPhone experience.
+          </p>
+<p>
+<strong>Gyeol Abacus</strong> was created after my mother, who has experience with abacus calculation,
+            mentioned that physical abacuses are becoming harder to find these days and asked whether I could
+            make a portable abacus app for the phone.
+          </p>
+<p>
+            The app recreates an 8-column abacus on iPhone, allowing users to move beads directly,
+            check the current value in real time, and practice making target numbers. Rather than being
+            designed only for children, it was developed as a simple and accessible digital abacus that
+            anyone can carry and use.
+          </p>
+<p>
+            This project reflects my interest in transforming everyday needs and family-based ideas into
+            released digital products through SwiftUI implementation, interaction design, character-based
+            visual identity, App Store submission, and public product communication.
+          </p>
+<ul>
+<li>Developed a portable 8-column abacus experience for iPhone using SwiftUI.</li>
+<li>Designed the app concept from a real family request for a digital abacus.</li>
+<li>Implemented direct bead interaction, real-time value display, and target-number practice.</li>
+<li>Added customization features such as bead color selection and profile photo settings.</li>
+<li>Connected utility-based learning with the original character “Gyeol” for a friendly visual experience.</li>
+<li>Completed the product cycle from concept design and app development to App Store release.</li>
+</ul>
+<div class="tags">
+<span class="tag">iOS App</span>
+<span class="tag">SwiftUI</span>
+<span class="tag">Portable Abacus</span>
+<span class="tag">Education / Utility</span>
+<span class="tag">Number Sense</span>
+<span class="tag">Interaction Design</span>
+<span class="tag">Character-based UX</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://apps.apple.com/app/결이-주산/id6772425301" target="_blank">
+              App Store
+            </a>
+</div>
+</article>
+<article class="card featured-card span-12">
+<span class="featured-label">Released App</span>
+<div class="project-title">
+<h3>Gyeol Hangeul | Korean Writing Learning App</h3>
+<small>iOS · iPad/iPhone · Education</small>
+</div>
+<p class="tagline">
+            An iOS/iPadOS Korean writing learning app released by Risonanza Studio,
+            designed for young learners and beginner Korean language learners.
+          </p>
+<p>
+<strong>Gyeol Hangeul</strong> helps users learn Korean words by seeing, hearing,
+            and writing them directly on the screen with the original character “Gyeol.”
+            The app was designed with iPad landscape use, Apple Pencil interaction,
+            pronunciation learning, and simple category-based word practice in mind.
+          </p>
+<p>
+            This project covers the full product cycle from concept development, UX planning,
+            SwiftUI implementation, audio integration, privacy policy preparation,
+            App Store Connect submission, and official App Store release.
+          </p>
+<ul>
+<li>Planned and designed a character-based Korean writing learning experience.</li>
+<li>Implemented the app using SwiftUI for iPhone and iPad.</li>
+<li>Designed handwriting practice interactions for Apple Pencil and touch input.</li>
+<li>Integrated pronunciation learning through Apple TTS and WAV audio files.</li>
+<li>Prepared App Store metadata, privacy policy, screenshots, and release materials.</li>
+<li>Released the app on the Korean App Store under Risonanza Studio.</li>
+</ul>
+<div class="tags">
+<span class="tag">iOS App</span>
+<span class="tag">SwiftUI</span>
+<span class="tag">AVFoundation</span>
+<span class="tag">Apple TTS</span>
+<span class="tag">WAV Audio</span>
+<span class="tag">Korean Learning</span>
+<span class="tag">Character-based Education</span>
+<span class="tag">App Store Release</span>
+</div>
+<div class="actions">
+<a class="btn" href="https://apps.apple.com/app/id6770384972" target="_blank">
+              App Store
+            </a>
+</div>
+</article>
+<article class="card span-12">
+<div class="character-ip-content">
+<div class="character-ip-text">
+<h3>Character IP Development: Gyeol the Fluffy Puppy</h3>
+<p class="tagline">
+                An original character IP project developed across small-scale goods,
+                released iOS apps, web pages, and educational digital content.
+              </p>
+<div class="tags">
+<span class="tag">Character IP</span>
+<span class="tag">Goods Design</span>
+<span class="tag">Released iOS Apps</span>
+<span class="tag">Web Development</span>
+<span class="tag">Educational Content</span>
+</div>
+</div>
+<div class="character-ip-visual">
+<img alt="Gyeol the Fluffy Puppy character illustration" src="https://i.ibb.co/b5T9w7YH/gyoel.png"/>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section id="future-research">
+<h2>Future Research Direction</h2>
+<div class="card span-12">
+<p>
+          My future research aims to examine digital platforms as cultural environments
+          where human experience, emotion, communication, and technology are continuously shaped.
+        </p>
+<p>
+          I am particularly interested in combining computational methods with qualitative interpretation,
+          including review data analysis, sentiment analysis, topic modeling, platform behavior analysis,
+          close reading, and contextual interpretation. This mixed-methods approach allows digital traces
+          to be interpreted not only as data points, but as cultural expressions of everyday experience.
+        </p>
+<p>
+          This direction connects humanities informatics, digital humanities,
+          computational social science, platform studies, AI-mediated communication,
+          and human-technology interaction.
+        </p>
+<div class="tags">
+<span class="tag">Humanities Informatics</span>
+<span class="tag">Digital Humanities</span>
+<span class="tag">Computational Social Science</span>
+<span class="tag">Mixed Methods</span>
+<span class="tag">Platform Culture</span>
+<span class="tag">Human-Technology Interaction</span>
+</div>
+</div>
+</section>
+<section id="background">
+<h2>Academic &amp; Technical Background</h2>
+<div class="grid">
+<div class="card span-4">
+<h3>Education</h3>
+<ul>
+<li><strong>M.A. in Social &amp; Cultural Studies</strong></li>
+<li><strong>B.A. in Management</strong></li>
+<li>Science-track background through secondary education</li>
+<li>Relevant science coursework: General Mathematics, General Biology, Introduction to Chemistry</li>
+<li>International experience in Australia, Mexico, and France prior to undergraduate study</li>
+</ul>
+</div>
+<div class="card span-4">
+<h3>AI &amp; Software Training</h3>
+<ul>
+<li><strong>Python Data Analysis</strong> 2021</li>
+<li><strong>Allen School Swift Bootcamp</strong> 2024</li>
+<li><strong>Full-Stack AI &amp; LLM Development Bootcamp</strong> 2026</li>
+</ul>
+</div>
+<div class="card span-4">
+<h3>Technical Skills</h3>
+<ul>
+<li><strong>Programming:</strong> Python, SQL, Swift</li>
+<li><strong>Statistics:</strong> Stata, SPSS, regression analysis, panel data analysis</li>
+<li><strong>Machine Learning:</strong> scikit-learn, XGBoost, LightGBM, PyTorch</li>
+<li><strong>NLP:</strong> text preprocessing, sentiment analysis, BERTopic, embeddings</li>
+<li><strong>Visualization &amp; Apps:</strong> Matplotlib, Streamlit, dashboard development</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="links">
+<h2>Contact</h2>
+<div class="grid">
+<div class="card span-4">
+<h3>GitHub</h3>
+<p>
+<a href="https://github.com/j-ai-616" target="_blank">
+              github.com/j-ai-616
+            </a>
+</p>
+</div>
+<div class="card span-4">
+<h3>Steady Study Log</h3>
+<p>
+<a href="https://dreamyhand.tistory.com" target="_blank">
+              https://dreamyhand.tistory.com
+            </a>
+</p>
+</div>
+<div class="card span-4">
+<h3>Email</h3>
+<p>
+<a href="mailto:yjson616@gmail.com">
+              yjson616@gmail.com
+            </a>
+</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+      © 2026 Ji-Eun Son. Portfolio. <br/>
+      智恩 · Sapientia illuminat, gratia sanat.
+    </div>
+</footer>
+</body>
+</html>
