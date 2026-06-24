@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/> 
@@ -505,9 +504,10 @@
       margin-bottom: 6px;
     }
 
+    #awards .grid > .featured-card .honor-meta,
     .honor-card .honor-meta {
-      color: var(--muted);
-      font-size: 0.88rem;
+      color: #9aa3b2;
+      font-size: 0.82rem;
       margin-bottom: 14px;
     }
 
@@ -616,6 +616,27 @@
 
     @media (max-width: 800px) {
       #books .book-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Awards & Recognition: 1x3 horizontal layout, stacking to 1 column on narrow screens. */
+    #awards .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #awards .grid > .featured-card {
+      grid-column: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #awards .grid > .featured-card .tags {
+      margin-top: auto;
+    }
+
+    @media (max-width: 800px) {
+      #awards .grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1013,6 +1034,7 @@
 
 <section id="awards">
 <h2>Awards &amp; Recognition</h2>
+<div class="grid">
 <article class="card featured-card">
 <h3>Academic Excellence Award</h3>
 <div class="honor-meta">Graduate School of Public Administration, Yonsei University · 2020.05</div>
@@ -1049,7 +1071,6 @@
 <span class="tag">Student Leadership</span>
 </div>
 </article>
-</div>
 </div>
 </section>
 
