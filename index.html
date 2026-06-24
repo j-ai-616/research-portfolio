@@ -481,6 +481,45 @@
       font-weight: 600;
     }
 
+    /* Academic Honors: compact trio of school-level awards, distinct from
+       the featured Writing Award card above it. */
+    .honors-grid {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .honor-card {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .honor-card .featured-label {
+      background: var(--accent-deep);
+    }
+
+    .honor-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .honor-card .honor-meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+    }
+
+    .honor-card p {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+    }
+
+    .honor-card .tags {
+      margin-top: auto;
+    }
+
     @media (max-width: 800px) {
       .span-4,
       .span-6,
@@ -553,6 +592,10 @@
 
       .research-question-block {
         padding: 20px;
+      }
+
+      .honors-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1002,6 +1045,48 @@
 <span class="tag">A Time to Take Root</span>
 </div>
 </article>
+
+<div aria-label="Academic honors from graduate study" class="honors-grid">
+<article class="card honor-card">
+<span class="featured-label">Academic Honor</span>
+<h3>Academic Excellence Award</h3>
+<div class="honor-meta">Graduate School of Public Administration, Yonsei University · 2020.05</div>
+<p>
+              Awarded for top academic performance within the Social &amp; Cultural Studies major.
+            </p>
+<div class="tags">
+<span class="tag">Academic Excellence</span>
+<span class="tag">Top of Major</span>
+</div>
+</article>
+
+<article class="card honor-card">
+<span class="featured-label">Academic Honor</span>
+<h3>Best Thesis Award</h3>
+<div class="honor-meta">Graduate School of Public Administration, Yonsei University · 2021.02</div>
+<p>
+              Awarded for the master's thesis on life satisfaction among middle-aged and older retirees, based on quantitative panel data analysis using Stata.
+            </p>
+<div class="tags">
+<span class="tag">Best Thesis</span>
+<span class="tag">Panel Data</span>
+<span class="tag">Stata</span>
+</div>
+</article>
+
+<article class="card honor-card">
+<span class="featured-label">Academic Honor</span>
+<h3>Meritorious Service Award</h3>
+<div class="honor-meta">Conferred by the Dean, Graduate School of Public Administration, Yonsei University · 2021.02</div>
+<p>
+              Recognized for service as major representative and as Vice President for Culture of the 101st Student Council.
+            </p>
+<div class="tags">
+<span class="tag">Service Award</span>
+<span class="tag">Student Leadership</span>
+</div>
+</article>
+</div>
 </div>
 </section>
 
